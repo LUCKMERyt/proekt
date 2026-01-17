@@ -97,3 +97,8 @@
     float: left;
 }
 
+.box{
+    width: 684px;
+    height: 680px;
+    background-color: coral;
+}

@@ -1,4 +1,4 @@
-console.log("----------------------")
+console.log("----------------------_-_-_-_-_-_-_-_-")
 
 // alert("Привет")
 
@@ -88,7 +88,139 @@ console.log("----------------------")
 
 // ТАЙМЕР = setTimeout
 
-function show(){
-    console.log(124)
+// function show(){
+//     console.log(124)
+// }
+// let time=setTimeout(show,2000)
+
+
+function print(param){// скрип которыц позволяет при помоши 
+                      // созданой функции укоротить вывод в консоль
+    console.log(param)
 }
-let time=setTimeout(show,2000)
+
+
+
+/*                      Объекты и масивы  */
+
+// let groceries =['Milk','Eggs','frosted Flakes', 'Salam','Juice']
+// print(groceries[0])//   Вывести 1(один) элемент
+
+// print(groceries)//      вывести специальным списком в консоли
+
+// //                   цикл для перебора масива
+// for(let i=0;i<groceries.length;i++){
+//     print(groceries[i])
+// }
+// //                   цикл для перебора масива
+// let j=0;
+// while(j<groceries.length){
+//     print(groceries[j])
+//     j++
+// }
+
+////                    цикл для складывание всех элементов
+// let q=0;
+// let nums =[1,2,3,4,5]
+// for(let i=0;i<nums.length;i++){
+//     print('nums[i]='+nums[i])
+//     q = q + nums[i]
+//     print('q='+q)
+// }
+
+
+
+////                    цикл для складывание всех 
+////                      цетных и не четных цисел
+// w=0;
+// e=0;
+// let numbers = [1,2,3,4,5,6,7,8,10]
+// for(let i=0;i<numbers.length;i++){
+//     if (numbers[i] %2==0){
+//         w=w+numbers[i]
+//         print('чётный элемент='+numbers[i])
+//     }else{
+//         e=e+numbers[i]
+//         print('не чётный элемент='+numbers[i])
+//     }
+// }
+// print('Сумма чётных элеменов='+e)
+// print('Сумма нечётных элеменов='+w)
+
+
+// let a1=[]
+// let a2=[]
+// let a3=[]
+
+// let arr = [0,-1,-5,2,3,5,0,7,-8,-3,9,0,-3,-4,4,0]
+// for(let i=0;i<arr.length;i++){
+//     if(arr[i]<0){
+//         a3.push(arr[i])
+//     }
+//     if(arr[i]%2==0&arr[i]>0){
+//         a1.push(arr[i])
+//     }
+//     if(arr[i]%2!==0&arr[i]>0){
+//         a2.push(arr[i])
+//     }
+// }
+// print(a1)
+// print(a2)
+// print(a3)
+
+
+
+// //                              6
+// s1=0;
+// s2=0
+// arr=[1,2,3,4,20,6,7,8,9,5,14,15,16,17,27,14,37,12,64,37]
+// for(let i=0;i<arr.length;i++){
+//     if(arr[i]%2==0){
+//         // print('Чет'+arr[i])
+//         //s1=s1+i //Сумма
+//         s1+=arr[i] //количество
+//     }
+//     if(arr[i]%2!==0){
+//         // print('нечет'+arr[i])
+//         //s2=s2+i //Сумма
+//         s2+=arr[i] //количество
+//     }
+// }
+// print('Чет'+s1)
+// print('Не чет'+s2)
+// print("---------------------")
+
+
+// //                              3
+// arr=[-1,2,-3,4,-5,6,7,-8,9,10,11]
+// s=0;
+// sr=0;
+// for(let i=0;i<arr.length;i++){
+//     s=s+Math.abs(arr[i])
+// }
+// sr=s/arr.length
+// print('1 Задание='+sr)
+
+
+// col=0;
+// for(let i=0;i<arr.length;i++){
+//     if(Math.abs(arr[i])>sr){
+//         col+=1
+//     }
+// }
+// print("2 Задание="+col)
+
+arr1=[-1,2,-3,4,-5,6,7,9,10,11]
+print(arr1)
+max=0;
+for(let j=0;j<arr1.length;j++){
+    if(arr1[j]>max){
+        max=arr1[j]
+    }
+}
+let el=arr1.shift()
+let ind = arr1.indexOf(max,0)
+a1 = arr1[ind]
+arr1[ind]=el
+arr1.unshift(a1)
+print(arr1)

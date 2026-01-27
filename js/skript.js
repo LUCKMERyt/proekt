@@ -210,17 +210,122 @@ function print(param){// скрип которыц позволяет при п�
 // }
 // print("2 Задание="+col)
 
-arr1=[-1,2,-3,4,-5,6,7,9,10,11]
-print(arr1)
-max=0;
-for(let j=0;j<arr1.length;j++){
-    if(arr1[j]>max){
-        max=arr1[j]
-    }
-}
-let el=arr1.shift()
-let ind = arr1.indexOf(max,0)
-a1 = arr1[ind]
-arr1[ind]=el
-arr1.unshift(a1)
-print(arr1)
+// arr1=[-1,2,-3,4,-5,6,7,9,10,11]
+// print(arr1)
+// max=0;
+// for(let j=0;j<arr1.length;j++){
+//     if(arr1[j]>max){
+//         max=arr1[j]
+//     }
+// }
+// let el=arr1.shift()
+// let ind = arr1.indexOf(max,0)
+// a1 = arr1[ind]
+// arr1[ind]=el
+// arr1.unshift(a1)
+// print(arr1)
+
+
+
+// /*              STR-СТРОКИ              */
+// //    01234
+// str1="HELLO"
+// //    01234
+// str2="WORLD"
+// res=str1+" "+str2
+// print(res)
+
+// res1=str1.concat(' '+str2)
+// print(res1)
+
+// res2=str1.concat(str2+str1+str2+str1)
+// print(res2)
+
+// print(str1.charAt(1))
+// print(str2[4])
+// print(str2[-1])
+// print(str2[28])
+
+// print(res2.length)
+
+// print(res2.slice(5,12))
+
+// print(res2.substr(5,7))
+
+// print(res2.slice(0,-6))
+
+
+
+// print(res2.indexOf('WORLD')) // первый индекс этого слого
+// print(res2.lastIndexOf('WORLD'))// последний индекс этого слого
+
+
+
+// Разделить гласные и согласные буквы
+// str1="Привет, Мир"
+// glas="а у о и э ы я ю е ё"
+// sogl="б в г д ж з й к л м н п р с т ф х ц ч ш щ"
+
+// res_glas=''
+// res_sogl=''
+
+// function filter(es){
+//     for(let i=0;i<es.length;i++){
+//         if((sogl.indexOf(es[i]) !== -1) & (es[i] !==' ')){
+//             res_sogl=res_sogl+es[i]
+//         }else if ((glas.indexOf( es[i])!==-1) & (es[i] !==' ')){
+//             res_glas=res_glas+es[i]
+//         }
+//     }
+//     return res_glas+" "+res_sogl
+// }
+// r=filter(str1.toLowerCase()).split(' ')
+// print(r)
+// print(r[0])
+// print(r[1])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function splitString(stringToSplit, separator) {
+//     var arrayOfStrings = stringToSplit.split(separator);
+  
+//     console.log('Оригинальная строка: "' + stringToSplit + '"');
+//     console.log('Разделитель: "' + separator + '"');
+//     console.log(
+//       "Массив содержит " +
+//         arrayOfStrings.length +
+//         " элементов: " +
+//         arrayOfStrings.join(" / "),
+//     );
+//   }
+
+// var glas="а у о и э ы я ю е ё"
+
+// var space = " ";
+
+// splitString(glas, space);

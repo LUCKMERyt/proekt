@@ -93,6 +93,13 @@
     width: 100%;
     height: 500px;
 }
+.content_index{
+    margin:10px 10px 10px;
+    border: solid rgb(152, 230, 210);
+    /* background-color: antiquewhite; */
+    width: 100%;
+    height: 500px;
+}
 .content_cotegori,
 .content_stati{
     float: left;
@@ -225,4 +232,119 @@
     display: inline-block;
     vertical-align: middle;
     margin-left: 10px; 
+}
+
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    text-align: center;
+}
+h2 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+    text-align: center;
+}
+
+
+.blog{
+    width: 100%;
+    height: 920px;
+    background-color: rgb(141, 137, 137);
+}
+.blog_right,
+.blog_left{
+    float: left;
+}
+.blog_left{
+    width: 50%;
+    height: 500px;
+    background-color: #f5fffa;
+    border-color: #cef2e0;
+    margin-right: 5px;
+}
+
+.blog_right{
+    width: 49.5%;
+    height: 500px;
+    background-color: #f5faff;
+    border-color: #cedff2;
+
+}
+
+.left_text{
+    width: 60%;
+    float: inline-end;
+    font-size: 20px;
+}
+p::first-line {
+    color: rgba(99, 99, 235, 0.774);
+    text-transform: uppercase;
+}
+.right_text{
+    width: 66%;
+    float: inline-end;
+    font-size: 24px;
+}
+::selection {
+    color: gold;
+    background-color: red;
+}
+
+p::selection {
+    color: white;
+    background-color: blue;
+}
+p:hover {
+    background-color: #375f85;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.img :hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+
+.content_o_nas{
+    width: 100%;
+    height: 1000px;
+    background-color: #1a334b;
+}
+.content_cotegori_o_nas{
+    padding: 10px;
+    width: 40%;
+    height: 1000px;
+    margin: auto;
+    background-color: #375f85;
+}
+.bloci{
+    margin-left: -3px;
+    margin-top: 3px;
+    width: 50%;
+    height: 150px;
+    background-color: #c02a04;
+}
+.bloci1{
+    margin-left: auto;
+    margin-right: -3px;
+    margin-top: 3px;
+    width: 50%;
+    height: 150px;
+    background-color: #c02a04;
+}
+.bloci p{
+    margin-right: auto;
+    margin-left: auto;
 }

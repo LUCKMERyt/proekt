@@ -317,6 +317,10 @@ p:hover {
     }
 
 
+
+
+/* o_nas.html */
+
 .content_o_nas{
     width: 100%;
     height: 1000px;
@@ -347,4 +351,52 @@ p:hover {
 .bloci p{
     margin-right: auto;
     margin-left: auto;
+}
+
+/* register.html */
+
+.content_regiser{
+    width: 80%;
+    height: 700px;
+    margin: 25px auto;
+    background-color: #375f85;
+}
+
+.content_main_regiser{
+    width: 49%;
+    height: 690px;
+    float: left;
+    border: 1px solid #375f85;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.content_main_regiser input[type="text"]{
+    width: 185px;
+    height: 30px;
+    color: #e72929;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 12px 20px;
+
+}
+.content_main_regiser input::placeholder{
+    color: aqua;
+    font-size: 20px;
+}
+.content_main_regiser label{
+    color: rgb(35, 172, 172);
+    font-size: 20px;
+}
+.form_reg_fam{
+    margin: auto;
+}
+.form_reg_name{
+    margin: auto;
+}
+.form_reg_otch{
+    margin: auto;
+}
+input[type="submit"]:hover {
+    background-color: #449d44;
 }

@@ -375,10 +375,6 @@ p:hover {
     width: 185px;
     height: 30px;
     color: #e72929;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 12px 20px;
-
 }
 .content_main_regiser input::placeholder{
     color: aqua;
@@ -388,15 +384,13 @@ p:hover {
     color: rgb(35, 172, 172);
     font-size: 20px;
 }
-.form_reg_fam{
-    margin: auto;
+
+.content_main_regiser textarea::placeholder{
+    color: rgb(21, 0, 141);
+    font-size: 13px;
 }
-.form_reg_name{
-    margin: auto;
-}
-.form_reg_otch{
-    margin: auto;
-}
-input[type="submit"]:hover {
+
+
+/* input[type="submit"]:hover {
     background-color: #449d44;
-}
+} */

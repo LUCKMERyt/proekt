@@ -1,0 +1,33 @@
+/* .main{
+	width: 500px;
+	height: 500px;
+	border-radius: 3px;
+	background-color: blueviolet;
+}
+
+.main_new{
+	width: 500px;
+	height: 500px;
+	border-radius: 3px;
+	background-color: rgb(8, 253, 0);
+}
+
+.test{
+	width: 100px;
+	height: 100px;
+	background-color: aqua;
+}
+#test{
+	width: 100px;
+	height: 100px;
+	background-color: greenyellow;
+} */
+
+
+input[type="checkbox"]{
+	width: 30px;
+	height: 30px;
+}
+p{
+	font-size: 20px;
+}

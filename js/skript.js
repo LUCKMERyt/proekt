@@ -568,3 +568,27 @@ console.log(param)
 
 // const table = youSayGoodBye();
 // table();
+
+let s=0
+function sendFrom(e){
+    const el1 = document.forms.main_form.your_fam.value
+    const el2 = document.forms.main_form.your_name.value
+    const el3 = document.forms.main_form.your_otch.value
+
+    alert("Фамилия = "+el1+" Имя = "+el2+" Отчество = "+el3)
+
+    s=s+1
+    // alert("рабатет")
+    // print("Сработал " +s+" раз")
+}
+const sendButton = document.main_form.btn_otprav
+sendButton.addEventListener('click', sendFrom)
+
+
+// const headerElement = document.getElementById('btn_otprav')
+// console.log('Text: ', headerElement.innerText)
+
+// const d = document.querySelector('#btn_otprav')
+// console.log(d.innerHTML)
+
+// d.innerText = 'Приветик'

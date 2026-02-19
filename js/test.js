@@ -130,15 +130,39 @@ console.log("------------------------------------------------------")
 
 
 async function fetchData(){
-    let url= 'http://localhost/myserver/'
+    // preper
+    const param1 = document.querySelector('#param1')
+    const param2 = document.querySelector('#param2')
+
+
+
+    let url= `http://localhost/myserver/?param1=${param1.value}&param2=${param2.value}`
     let response = await fetch(url, {
         method: 'GET',
         headers: { Accept: 'application/json'},
     })
 
-    console.log(response)
+
     let param = await response.json()
-    console.log(param)
+
+    // const p1 = document.querySelector('.p1')
+    // p1.innerHTML = param.p1
+    // const p2 = document.querySelector('.p2')
+    // p2.innerHTML = param.p2
+
+    // выводим результат
+    const res =document.querySelector('#res')
+    res.innerHTML = param.res
+    const res1 =document.querySelector('#res1')
+    res1.innerHTML = param.res1
+    const res2 =document.querySelector('#res2')
+    res2.innerHTML = param.res2
+    const res3 =document.querySelector('#res3')
+    res3.innerHTML = param.res3
 }
 
-fetchData()
+const mbtn = document.querySelector('#btn')
+
+btn.addEventListener('click', () =>{
+    fetchData()
+})

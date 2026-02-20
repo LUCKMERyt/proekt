@@ -31,3 +31,24 @@ input[type="checkbox"]{
 p{
 	font-size: 20px;
 }
+
+
+.test {
+	width: 30px;
+	height: 30px;
+	background-color: aqua;
+}
+
+.block{
+	height: 120px;
+	width: 100px;
+	background-color: crimson;
+	border-radius: 5px;
+}
+
+.img_log{
+	height: 900px;
+	width: 900px;
+	background-color: antiquewhite;
+	background-image: url(hhttps://yt3.googleusercontent.com/ytc/AIdro_k9-7RnWwbGa0TaW-bo8O8DdocXRtqlp0cX8zrw_DQBRA=s900-c-k-c0x00ffffff-no-rjttps://i.pinimg.com/736x/f4/2c/85/f42c853ba6f2ce6138146236d41a6265.jpg);
+}

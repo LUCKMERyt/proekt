@@ -129,40 +129,120 @@
 console.log("------------------------------------------------------")
 
 
-async function fetchData(){
-    // preper
-    const param1 = document.querySelector('#param1')
-    const param2 = document.querySelector('#param2')
+// async function fetchData(){
+//     // preper
+//     const param1 = document.querySelector('#param1')
+//     const param2 = document.querySelector('#param2')
 
 
 
-    let url= `http://localhost/myserver/?param1=${param1.value}&param2=${param2.value}`
-    let response = await fetch(url, {
-        method: 'GET',
-        headers: { Accept: 'application/json'},
-    })
+//     let url= `http://localhost/myserver/?param1=${param1.value}&param2=${param2.value}`
+//     let response = await fetch(url, {
+//         method: 'GET',
+//         headers: { Accept: 'application/json'},
+//     })
+
+//     let param = await response.json()
+
+//     // выводим результат
+//     const res =document.querySelector('#res')
+//     res.innerHTML = param.res
+//     const res1 =document.querySelector('#res1')
+//     res1.innerHTML = param.res1
+//     const res2 =document.querySelector('#res2')
+//     res2.innerHTML = param.res2
+//     const res3 =document.querySelector('#res3')
+//     res3.innerHTML = param.res3
+// }
+
+// const mbtn = document.querySelector('#btn')
+
+// btn.addEventListener('click', () =>{
+//     fetchData()
+// })
 
 
-    let param = await response.json()
 
-    // const p1 = document.querySelector('.p1')
-    // p1.innerHTML = param.p1
-    // const p2 = document.querySelector('.p2')
-    // p2.innerHTML = param.p2
 
-    // выводим результат
-    const res =document.querySelector('#res')
-    res.innerHTML = param.res
-    const res1 =document.querySelector('#res1')
-    res1.innerHTML = param.res1
-    const res2 =document.querySelector('#res2')
-    res2.innerHTML = param.res2
-    const res3 =document.querySelector('#res3')
-    res3.innerHTML = param.res3
+
+
+// const test = document.querySelector('.test')
+// const test_btn = document.querySelector('#test_btn')
+// const test_p = document.querySelector('.test_p')
+// const test_logo = document.querySelector('#test_logo')
+
+// test.addEventListener('click', () =>{
+//     test.style.width = '100px'
+//     test.style.height = '100px'
+//     test.style.backgroundColor = 'greenyellow'
+//     test.removeAttribute('Class')
+//     test.setAttribute('class','zag')
+
+//     const zag = document.querySelector('.zag')
+//     if (zag){
+//         zag.addEventListener('click', () =>{
+//             zag.style.marginLeft = '100px'
+//             zag.style.width = '150px'
+//             zag.style.height = '30px'
+//             zag.style.backgroundColor = 'aqua'
+//             zag.setAttribute('class','test')
+//         })
+//     }
+// })
+
+// test_btn.addEventListener('click', () =>{
+//     alert(2222)
+// })
+// test_p.addEventListener('click', () =>{
+//     alert(3333)
+// })
+// test_logo.addEventListener('click', () =>{
+//     alert(4444)
+// })
+
+const block = document.querySelector('.block')
+block.addEventListener('mousemove', () =>{
+    block.style.marginLeft = '180px'
+    block.style.width = '150px'
+    block.style.height = '150px'
+    block.style.backgroundColor = 'aqua'
+})
+block.addEventListener('mousedown', () =>{
+    block.style.marginLeft = '10px'
+    block.style.width = '150px'
+    block.style.height = '150px'
+    block.style.backgroundColor = 'crimson'
+})
+
+
+function myf(e){
+    const log = document.querySelector('#log')
+    log.textContent += `${e.code}`
 }
 
-const mbtn = document.querySelector('#btn')
+const inp = document.querySelector('#inp')
+inp.addEventListener('keydown', myf)
 
-btn.addEventListener('click', () =>{
-    fetchData()
-})
+
+
+// const element = document.querySelector('#img_log')
+
+
+
+// element.style.opacity=0
+
+// setTimeout(() => {
+//     const interval = setInterval(()=>{
+//         element.style.opacity=parseFloat(element.style.opacity)+ 0.1
+
+//         if(element.style.opacity >=1){
+//             clearInterval(interval)
+//         }
+//     }, 10)
+// }, 1000)
+
+
+window.addEventListener('scroll', function () {
+    // код, который будет выполняться при скролле
+    this.alert(111)
+});

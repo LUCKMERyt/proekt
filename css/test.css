@@ -23,32 +23,200 @@
 	background-color: greenyellow;
 } */
 
-
-input[type="checkbox"]{
-	width: 30px;
-	height: 30px;
+input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
 }
-p{
-	font-size: 20px;
+p {
+  font-size: 20px;
 }
-
 
 .test {
-	width: 30px;
-	height: 30px;
-	background-color: aqua;
+  width: 30px;
+  height: 30px;
+  background-color: aqua;
 }
 
-.block{
-	height: 120px;
-	width: 100px;
-	background-color: crimson;
-	border-radius: 5px;
+.block {
+  height: 120px;
+  width: 100px;
+  background-color: crimson;
+  border-radius: 5px;
 }
 
-.img_log{
-	height: 900px;
-	width: 900px;
-	background-color: antiquewhite;
-	background-image: url(hhttps://yt3.googleusercontent.com/ytc/AIdro_k9-7RnWwbGa0TaW-bo8O8DdocXRtqlp0cX8zrw_DQBRA=s900-c-k-c0x00ffffff-no-rjttps://i.pinimg.com/736x/f4/2c/85/f42c853ba6f2ce6138146236d41a6265.jpg);
+.img_log {
+  height: 900px;
+  width: 900px;
+  background-color: antiquewhite;
+  background-image: url(hhttps://yt3.googleusercontent.com/ytc/AIdro_k9-7RnWwbGa0TaW-bo8O8DdocXRtqlp0cX8zrw_DQBRA=s900-c-k-c0x00ffffff-no-rjttps://i.pinimg.com/736x/f4/2c/85/f42c853ba6f2ce6138146236d41a6265.jpg);
 }
+
+.block_form {
+  width: 30%;
+  height: 300px;
+  margin: 100px auto;
+}
+
+.block_form p {
+  margin-bottom: 50px;
+  margin-right: 200px;
+  font-size: 19px;
+  margin: 0 auto;
+}
+
+.block_form label {
+  font-size: 32px;
+  font-family: "ProggyVector-Regular";
+}
+.block_form input {
+  width: 70%;
+  height: 40px;
+  font-size: 21px;
+}
+
+.left {
+  background-color: #2196f3;
+  padding: 20px;
+  float: left;
+  width: 20%; /* Ширина 20%, по умолчанию */
+}
+
+.main {
+  background-color: #f1f1f1;
+  padding: 20px;
+  float: left;
+  width: 60%; /* Ширина 60%, по умолчанию */
+}
+
+.right {
+  background-color: #4caf50;
+  padding: 20px;
+  float: left;
+  width: 20%; /* Ширина 20%, по умолчанию */
+}
+
+/* Используйте медиа-запрос, чтобы добавить break point на 800px: */
+@media (min-width: 576px) and (max-width: 677.98px) {
+  .left,
+  .main,
+  .right {
+    width: 70%; /* Ширина 100%, когда область просмотра 800px или меньше */
+  }
+}
+@media (min-width: 678px) and (max-width: 900.98px) {
+  .left,
+  .main,
+  .right {
+    width: 80%; /* Ширина 100%, когда область просмотра 800px или меньше */
+  }
+  .left {
+    background-color: #4caf50;
+  }
+  .main {
+    background-color: aquamarine;
+  }
+  .right {
+    background-color: blue;
+  }
+}
+@media (min-width: 901px) and (max-width: 1199.98px) {
+  .left,
+  .main,
+  .right {
+    width: 100%; /* Ширина 100%, когда область просмотра 800px или меньше */
+  }
+}
+
+
+
+.test1{
+	background-color: #2196f3;
+	border-radius: 20px;
+}
+.test2{
+	background-color: #43c50f;
+	border-radius: 10px;
+}
+.test3{
+	background-color: #dd0f0f;
+	border-radius: 5px 5px;
+}
+
+
+
+
+
+
+/* Разработать простую игру с персонажами: на js
+1.Простой житель
+2.Воин-защитник
+3.Лекарь
+
+Суть игры имеется два селения , в них живут жители,некоторые из них лекари. И воины, которые защищают селение
+Происходит нападение воинов одного селения на другое 
+При этом происходит ранение жителей и воинов. Лекари в сражении не участвуют, но лечат воинов и жителей
+
+Техническое задание на разработку
+1. Создать класс Людей
+2. Создать классы наследники - житель, воин, лекарь
+3. Создать по 1 объекту - жителя, воина, лекаря, для 2 селений
+4. Игра запускается в бесконечном цикле
+5. Выход из игры, победа одной из сторон
+6.Использовать случайные величины при разработке сценария игры
+7.Параметры жизни -100
+8.Урон воина - 10 при ударе другого воина
+9. Ленчния лекаря -5
+10. Урон жителя при ударе воина -15
+11. Житель не может бить
+12.Лекарь только лечит
+
+Требования
+1. В классах должны быть конструкторы и диструкторы (диструкторы по необходимости)
+2. В классах должны быть методы и поля
+3. В родительском классе должны быть методы, которые должны быть использованы в наследниках
+4. В наследниках должны быть переопределенные методы */
+
+/* class User {
+  name // имя-   воин или лекарь или житель
+  health // здоровье хп
+  isAlive  // Живой или нет
+
+  construct(name) { // метод получение роли-(воин лекарь или житель)
+      this.name = name;
+      this.health = 100;
+      this.isAlive = true;
+  }     //        construct
+
+  // Метод получения урона
+  construct(damage) {
+      this.health -= damage;
+      if (this.health <= 0) {
+          this.health = 0;
+          this.isAlive = false;
+      }
+  }     //         hit
+
+  // Метод лечения
+  construct heal(amount){
+      if (this.isAlive or this.health < 100) {
+          this.health += amount;
+          if (this.health > 100) {
+              this.health = 100;
+          }
+      }
+  }       //         heal
+
+   function getStatus() { // Статус
+      return this.isAlive ? "{this.name} (HP: {this.health})" : "{this.name} (мертв)";
+  }
+
+  //          атака
+  function attack(target) {}
+
+  //          лечение
+  function healTarget(target) {}
+
+  function is_alive() {// Живой или нет
+      return this.isAlive;
+  }
+}       //         User */

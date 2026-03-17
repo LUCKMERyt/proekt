@@ -129,7 +129,7 @@ p {
 
 
 
-.test1{
+/* .test1{
 	background-color: #2196f3;
 	border-radius: 20px;
 }
@@ -140,9 +140,23 @@ p {
 .test3{
 	background-color: #dd0f0f;
 	border-radius: 5px 5px;
+} */
+
+
+
+
+.blocks{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
-
-
-
-
+.block_inner1,
+.block_inner2,
+.block_inner3,
+.block_inner{
+  width: 300px;
+  height: 300px;
+  background-color: #2196f3;
+  margin-left: 20px;
+}

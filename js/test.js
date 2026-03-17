@@ -213,6 +213,10 @@ console.log("------------------------------------------------------");
 //     this.alert(111)
 // });
 
+
+
+
+
 const login = document.querySelector("#login");
 const res = document.querySelector("#res"); // Correct selector for your paragraph
 
@@ -227,6 +231,7 @@ login.addEventListener("keyup", () => {
     res.innerHTML = "слишком много символов(" + d.length + "/8)";
   }
 });
+
 
 
 
@@ -254,139 +259,36 @@ login.addEventListener("keyup", () => {
 
 
 
-// ЛЮДИ
-class Human {
-  constructor(name) {
-      this.name = name;
-      this.health = 100;
-      this.Alive = true;
-  }
+console.log('test4')
 
-  // Метод получения урона
-  takeDamage(damage) {
-      if (!this.Alive) return;
-      this.health -= damage;
-      if (this.health <= 0) {
-          this.health = 0;
-          this.Alive = false;
-          console.log(`${this.name} погибает.`);
-      }
-  }
+async function fetchData() {
+	// prepar
+	const param1 = '#param1'
+	const param2 = '#param2'
 
-  // Метод лечения
-  heal(amount) {
-      if (!this.Alive) return;
-      this.health += amount;
-      if (this.health > 100) this.health = 100;
-      console.log(`${this.name} лечится на ${amount} HP.`);
-  }
+	let url = `http://localhost/myserver/?param1=${param1.value}&param2=${param2.value}`
+	let response = await fetch(url, {
+		method: 'GET',
+		headers: { Accept: 'application/json' },
+	})
 
-  getStatus() {
-      return this.Alive ? `${this.name} (HP: ${this.health})` : `${this.name} (мертв)`;
-  }
-}// ЛЮДИ
+	let param = await response.json()
+	console.log(param)
 
+	//добавление элементов в цикле
+	for (let key in param) {
+		if (param.hasOwnProperty(key)) {
+			const par = document.querySelector('.blocks')
+			const newDiv = document.createElement('div')
+			newDiv.className = 'block_inner'
+			output_str = "| "+param[key].name +" | " + param[key].age+ " | " + param[key].surname + "| "
+			newDiv.innerHTML = output_str
 
-// Класс Житель
-class Vilaj extends Human {
-  constructor(name) {
-      super(name);
-      this.role = 'Житель';
-  }
-}// Класс Житель
-
-// Класс Воин
-class Warrior extends Human {
-  constructor(name) {
-      super(name);
-      this.role = 'Воин';
-      this.damage = 10; // урон при атаке
-  }
-
-  attack(target) {
-      if (this.Alive && target.Alive) {
-          target.takeDamage(this.damage);
-          console.log(`${this.name} атакует ${target.name} и наносит ${this.damage} урона.`);
-      }
-  }
-  
-}// Класс Воин
-
-// Класс Лекарь
-class Doctor extends Human {
-  constructor(name) {
-      super(name);
-      this.role = 'Лекарь';
-      this.amount = 5;
-  }
-  healTarget(target) {
-    if (this.Alive && target.Alive) {
-        target.heal(this.healAmount);
-        console.log(`${this.name} лечит ${target.name} на ${this.healAmount} HP.`);
-    }
-}
-}// Класс Лекарь
-
-
-
-
-//                  созданрие команд
-
-//    Команда 1
-const village1 = {
-  name: 'Селение 1',
-  humans: [
-      new Vilaj('Житель1_1'),
-      new Warrior('Воин1_1'),
-      new Doctor('Лекарь1_1')
-  ]
-};
-//    Команда 2
-const village2 = {
-  name: 'Селение 2',
-  humans: [
-      new Vilaj('Житель2_1'),
-      new Warrior('Воин2_1'),
-      new Doctor('Лекарь2_1')
-  ]
-};
-
-
-
-const raund=0
-
-function getTeamStatus(team) {
-  console.log(`Статус команды ${team.name}:`);
-  team.humans.forEach(human => {
-    console.log(human.getStatus());
-  });
+			par.appendChild(newDiv)
+		}
+	}
 }
 
-
-
-console.log("Начало битвы!");
-
-
-const attacker1 = village1.humans.find(h => h instanceof Warrior && h.Alive);
-const defender1 = village2.humans.find(h => h.Alive);
-if (attacker1 && defender1) {
-  attacker1.attack(defender1);
-}
-
-// Вторая команда: первый воин атакует первого
-const attacker2 = village2.humans.find(h => h instanceof Warrior && h.Alive);
-const defender2 = village1.humans.find(h => h.Alive);
-if (attacker2 && defender2) {
-  attacker2.attack(defender2);
-}
-
-// Лекари лечить своих
-const doctor1 = village1.humans.find(t => t.Alive);
-  if (village1 && village1.health < 100) {
-    h.healTarget(village1);
-    console.log()
-}
-  
-
-
-
+document.addEventListener('DOMContentLoaded', function () {
+	fetchData()
+})

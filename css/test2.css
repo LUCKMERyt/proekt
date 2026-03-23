@@ -1,0 +1,39 @@
+.slider {
+    width: 800px;
+    background-color: aqua;
+    overflow: hidden; /* Скрываем лишние слайды */
+    position: relative;
+    margin: auto;
+}
+
+.slides {
+  display: flex; /* Располагаем изображения горизонтально */
+  transition: transform 0.5s ease; /* Анимация перехода */
+}
+
+.slides img {
+  width: 800px; /* Ширина каждого слайда равна ширине слайдера */
+  flex-shrink: 0; /* Запрещаем сжатие изображений */
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.blocks{
+    margin: 0 auto;
+    width: 800px;
+    height: 200px;
+    background-color: blueviolet;
+}
+

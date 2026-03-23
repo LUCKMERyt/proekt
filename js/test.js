@@ -213,29 +213,20 @@ console.log("------------------------------------------------------");
 //     this.alert(111)
 // });
 
+// const login = document.querySelector("#login");
+// const res = document.querySelector("#res"); // Correct selector for your paragraph
 
+// login.addEventListener("keyup", () => {
+//   const d = login.value;
 
-
-
-const login = document.querySelector("#login");
-const res = document.querySelector("#res"); // Correct selector for your paragraph
-
-login.addEventListener("keyup", () => {
-  const d = login.value;
-
-  if (d.length <= 8) {
-    res.style.color = 'green';
-    res.innerHTML = "login подобран правильно";
-  } else {
-    res.style.color = 'red';
-    res.innerHTML = "слишком много символов(" + d.length + "/8)";
-  }
-});
-
-
-
-
-
+//   if (d.length <= 8) {
+//     res.style.color = 'green';
+//     res.innerHTML = "login подобран правильно";
+//   } else {
+//     res.style.color = 'red';
+//     res.innerHTML = "слишком много символов(" + d.length + "/8)";
+//   }
+// });
 
 // let user = {     // объект
 //   name: "John",  // под ключом "name" хранится значение "John"
@@ -249,7 +240,6 @@ login.addEventListener("keyup", () => {
 // // доступ к свойству через переменную
 // alert( user[key] );
 
-
 // for (let i in user) {
 //   // ключи
 //   console.log('имя переменой = ',i,' значение переменой = ' ,user[i]);  // name, age, isAdmin
@@ -257,38 +247,101 @@ login.addEventListener("keyup", () => {
 //   // console.log('значение переменой = ' ,user[i]); // John, 30, true
 //   }
 
+// console.log('test')
 
+// async function fetchData() {
+// 	// prepar
+// 	const param1 = '#param1'
+// 	const param2 = '#param2'
 
-console.log('test4')
+// 	let url = `http://localhost/myserver/?param1=${param1.value}&param2=${param2.value}`
+// 	let response = await fetch(url, {
+// 		method: 'GET',
+// 		headers: { Accept: 'application/json' },
+// 	})
 
-async function fetchData() {
-	// prepar
-	const param1 = '#param1'
-	const param2 = '#param2'
+// 	let param = await response.json()
+// 	console.log(param)
 
-	let url = `http://localhost/myserver/?param1=${param1.value}&param2=${param2.value}`
-	let response = await fetch(url, {
-		method: 'GET',
-		headers: { Accept: 'application/json' },
-	})
+// 	//добавление элементов в цикле
+// 	for (let key in param) {
+// 		if (param.hasOwnProperty(key)) {
+// 			const par = document.querySelector('.blocks')
+// 			const newDiv = document.createElement('div')
+// 			newDiv.className = 'block_inner'
+// 			output_str = "| "+param[key].name +" | " + param[key].age+ " | " + param[key].surname + "| "
+// 			newDiv.innerHTML = output_str
 
-	let param = await response.json()
-	console.log(param)
+// 			par.appendChild(newDiv)
+// 		}
+// 	}
+// }
 
-	//добавление элементов в цикле
-	for (let key in param) {
-		if (param.hasOwnProperty(key)) {
-			const par = document.querySelector('.blocks')
-			const newDiv = document.createElement('div')
-			newDiv.className = 'block_inner'
-			output_str = "| "+param[key].name +" | " + param[key].age+ " | " + param[key].surname + "| "
-			newDiv.innerHTML = output_str
+// document.addEventListener('DOMContentLoaded', function () {
+// 	fetchData()
+// })
 
-			par.appendChild(newDiv)
-		}
-	}
+async function fetchData(name, firstname, number_year, email, nickname, pass) {
+  let url = `http://localhost/myserver/?name=${name}&firstname=${firstname}&number_year=${number_year}&email=${email}&nickname=${nickname}&pass=${pass}`;
+  let response = await fetch(url, {
+    method: "GET",
+    headers: { Accept: "application/json" },
+  });
+
+  // let param = await response.json()
+  // console.log(param)
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-	fetchData()
-})
+function get_data_form() {
+  //const forms = document.querySelectorAll('#form_reg')
+  const btn_reg = document.querySelector("#btn_reg");
+  btn_reg.addEventListener("click", (event) => {
+    // валидация элементов
+    const exp = /[a-zA-Z][0-9]/;
+    const exp1 = /[a-zA-Z]/;
+    const exp2 = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    const name = document.querySelector("name").value;
+    const firstname = document.querySelector("#firstname").value;
+    const number_year = document.querySelector("#number_year").value;
+    const email = document.querySelector("#email").value;
+    const nickname = document.querySelector("#nickname").value;
+    const pass = document.querySelector("#exampleInputPassword1").value;
+	
+	alert(name);
+	alert(firstname);
+	alert(number_year);
+	alert(email);
+	alert(pass);
+
+    // проверка на нажатие checkbox
+    const chek1 = document.querySelector("#exampleCheck1");
+    if (chek1.checked) {
+      // проверка на имя и пороль
+      if (
+		exp1.test(name) &&
+		exp1.test(firstname) &&
+		exp2.test(email) &&
+        exp.test(nickname) &&
+        exp.test(pass)
+      ) {
+        console.log("Истино");
+        //d_to_server = JSON.stringify(d)
+        //console.log(d_to_server)
+        fetchData(name, firstname, number_year, email, nickname, pass);
+      } else {
+        console.log("Ложно");
+      }
+    } else {
+      alert("вы не согласились с нашими условиями");
+    }
+
+    // d = { nickname: nickname }
+
+    event.preventDefault();
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  get_data_form();
+});

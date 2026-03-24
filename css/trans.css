@@ -5,7 +5,11 @@
 	height: 500px;
 	display: flex;
 }
-.block_img{
+.bloc{
+
+
+}
+.block_cat{
     width: 20%;
     height: 400px;
     border:1px solid rgb(0, 255, 64) ;
@@ -13,6 +17,9 @@
     flex-direction: column;
 }
 
+.bloc:hover{
+background-color: aqua;
+}
 .block_content_main{
     width: 79%;
     height: 400px;

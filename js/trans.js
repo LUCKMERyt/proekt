@@ -1,6 +1,6 @@
 // Функция отправки запроса по id
 async function id_to_server(id, obj_dom) {
-	let url = `http://localhost/myserver/?id=${id}`
+	let url = `http://localhost/myserver/get?id=${id}`
 	let response = await fetch(url, {
 		method: 'GET',
 		headers: { Accept: 'application/json' },
@@ -8,7 +8,7 @@ async function id_to_server(id, obj_dom) {
 
 	let param = await response.json()
 
-	obj_dom.innerHTML = param[0].text
+	obj_dom.innerHTML = param[0].name
 	obj_dom.classList.add('active')
 
 	//добавление элементов в цикле
